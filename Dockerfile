@@ -9,7 +9,7 @@ RUN \
     nuget install NUnit.ConsoleRunner -o /tmp/nunit -version $NUNIT_VERSION && \
     cp -r /tmp/nunit/NUnit.ConsoleRunner.$NUNIT_VERSION/tools/ /nunit/
 
-RUN echo '#!/bin/bash\nmono /nunit/nunit3-console.exe' > /usr/bin/nunit && \
+RUN echo '#!/bin/bash\nmono /nunit/nunit3-console.exe "$@"' > /usr/bin/nunit && \
     chmod +x /usr/bin/nunit
 
 RUN apt-get clean
