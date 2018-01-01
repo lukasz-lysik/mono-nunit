@@ -1,4 +1,4 @@
-FROM mono:4.6.1
+FROM mono:latest
 
 ENV NUNIT_VERSION 3.5.0
 
